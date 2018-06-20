@@ -4,6 +4,8 @@ import {CoreModule} from './core';
 import {SharedModule} from './shared';
 import {MdSidenavModule} from '@angular/material'
 import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module'
+import {LoginModule} from './login/login.module'
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import {AppComponent} from './app.component';
     SharedModule,
     MdSidenavModule,
     CoreModule,
+    LoginModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
