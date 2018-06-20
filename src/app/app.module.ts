@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {CoreModule} from './core';
 import {SharedModule} from './shared';
-// import {LoginModule} from './login';
+import {MdSidenavModule} from '@angular/material'
 import {AppComponent} from './app.component';
 
 @NgModule({
@@ -12,6 +12,7 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     SharedModule,
+    MdSidenavModule,
     CoreModule,
   ],
   bootstrap: [AppComponent]
