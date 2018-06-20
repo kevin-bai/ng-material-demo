@@ -3,16 +3,18 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular
 
 @Component({
   selector: 'app-header',
-  template: `
-<p>headers</p>
-  `,
+  templateUrl: './header.component.html',
   styles: [`
   `],
 })
 export class HeaderComponent {
+  @Output() toggleSlide = new EventEmitter<void>()
 
   constructor() {
 
   }
 
+  openSliderBar() {
+    this.toggleSlide.emit();
+  }
 }
