@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {MdDialog} from '@angular/material';
+import {NewProjectComponent} from '../new-project/new-project.component'
 
 @Component({
   selector: 'app-project-list',
@@ -9,21 +11,25 @@ export class ProjectListComponent implements OnInit {
 
   projects = [
     {
-      "name": "企业平台",
-      "desc": "一个协作平台",
-      "img": "assets/img/covers/0.jpg"
+      'name': '企业平台',
+      'desc': '一个协作平台',
+      'img': 'assets/img/covers/0.jpg'
     },
     {
-      "name": "个人平台",
-      "desc": "一个协作平台2",
-      "img": "assets/img/covers/1.jpg"
+      'name': '个人平台',
+      'desc': '一个协作平台2',
+      'img': 'assets/img/covers/1.jpg'
     }
   ];
 
-  constructor() {
+  constructor(private dialog: MdDialog) {
   }
 
   ngOnInit() {
+  }
+
+  openNewProjectDialog() {
+    this.dialog.open(NewProjectComponent)
   }
 
 }
