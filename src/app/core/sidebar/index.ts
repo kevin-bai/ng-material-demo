@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
-
+import {ChangeDetectionStrategy, Component, EventEmitter, Output, OnInit} from '@angular/core';
+import {getDate} from 'date-fns';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +7,15 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular
   styleUrls: ['./sidebar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
+  today = 'day';
 
   constructor() {
+  }
+
+  ngOnInit() {
+    this.today = `day${getDate(new Date())}`
   }
 
 }
