@@ -7,12 +7,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isDark = false;
+  isDarkTheme = false;
 
   constructor() {
   }
 
   themeChange() {
-    this.isDark = !this.isDark;
+    this.isDarkTheme = !this.isDarkTheme;
   }
 }
