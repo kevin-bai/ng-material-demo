@@ -1,13 +1,36 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>登录：</md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <md-input-container>
-      <input mdInput type="text" placeholder="填写email">
-    </md-input-container>
-  </md-card-content>
-  <md-card-actions>
 
-  </md-card-actions>
-</md-card>
+<form>
+  <md-card>
+    <md-card-header>
+      <md-card-title>登录：</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-input-container floatPlaceholder="float" hintLabel="必填项" class="full-width">
+        <!--<button mdPrefix>&copy;</button>-->
+        <input mdInput type="text" placeholder="您的email" >
+        <!--<span mdSuffix>@qq.com</span>-->
+        <!--<md-hint>hint</md-hint>-->
+        <!--<md-error>error</md-error>-->
+      </md-input-container>
+      <md-input-container floatPlaceholder="float"  class="full-width">
+        <input mdInput type="password" placeholder="您的密码" >
+      </md-input-container>
+      <button md-raised-button type="button">登录</button>
+    </md-card-content>
+    <md-card-actions class="text-right">
+      <p>还没有账号？ <a href="">注册</a></p>
+      <p>忘记密码？ <a href="">找回</a></p>
+    </md-card-actions>
+  </md-card>
+  <md-card>
+    <md-card-header>
+      <md-card-title>每日佳句</md-card-title>
+      <md-card-subtitle>每一日你所付出的代价都比前一日高,因为你的生命又消短了</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="/assets/img/quote_fallback.jpg" alt="" class="img">
+    <md-card-content>
+      this is a english this is a englishthis is a englishthis is a englishthis is a english!
+    </md-card-content>
+
+  </md-card>
+</form>
