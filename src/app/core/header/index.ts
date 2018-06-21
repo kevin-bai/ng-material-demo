@@ -9,6 +9,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular
 })
 export class HeaderComponent {
   @Output() toggleSlide = new EventEmitter<void>()
+  @Output() themeToggle = new EventEmitter<boolean>()
 
   constructor() {
 
@@ -16,5 +17,9 @@ export class HeaderComponent {
 
   openSliderBar() {
     this.toggleSlide.emit();
+  }
+
+  themeToggleHandler(checked: boolean) {
+    this.themeToggle.emit(checked)
   }
 }

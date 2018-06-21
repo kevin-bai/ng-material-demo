@@ -1,10 +1,10 @@
-<md-sidenav-container>
+<md-sidenav-container [class.myapp-dark-theme]="isDark">
   <md-sidenav #sidenav mode="side" align="start">
     <app-sidebar></app-sidebar>
   </md-sidenav>
   <div class="site">
     <header>
-      <app-header (toggleSlide)="sidenav.toggle()"></app-header>
+      <app-header (toggleSlide)="sidenav.toggle()" (themeToggle)="themeChange()"></app-header>
     </header>
     <main>
       <router-outlet></router-outlet>
