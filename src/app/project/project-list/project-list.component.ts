@@ -29,7 +29,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   openNewProjectDialog() {
-    this.dialog.open(NewProjectComponent)
+    this.dialog.open(NewProjectComponent, {width: '300px', height: '400px', data: 'this is data sent'})
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
+import {MD_DIALOG_DATA} from '@angular/material'
 
 @Component({
   selector: 'app-new-project',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProjectComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MD_DIALOG_DATA) private data) {
+  }
 
   ngOnInit() {
+    console.log(JSON.stringify(this.data))
   }
 
 }
