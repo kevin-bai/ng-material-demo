@@ -1,0 +1,15 @@
+.card{
+  margin: 10px;
+  height: 360px;
+  flex: 0 0 360px;
+}
+:host{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+button{
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+}

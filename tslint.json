@@ -75,8 +75,9 @@
     ],
     "prefer-const": true,
     "quotemark": [
-      true,
-      "single"
+      false
+//      true,
+//      "single"
     ],
     "radix": true,
     "semicolon": [
