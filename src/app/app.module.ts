@@ -19,7 +19,7 @@ import {ProjectModule} from './project'
     CoreModule,
     AppRoutingModule,
     LoginModule,
-    ProjectModule
+    ProjectModule,
   ],
   bootstrap: [AppComponent]
 })
