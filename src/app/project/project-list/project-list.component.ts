@@ -29,7 +29,16 @@ export class ProjectListComponent implements OnInit {
   }
 
   openNewProjectDialog() {
-    this.dialog.open(NewProjectComponent, {width: '300px', height: '400px', data: 'this is data sent'})
+    const dialogRef = this.dialog.open(NewProjectComponent, {
+      width: '300px',
+      height: '400px',
+      data: {isDark: false}
+    });
+
+    // 订阅接收子组件传递过来的消息
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(`i received : ${res}`);
+    })
   }
 
 }
