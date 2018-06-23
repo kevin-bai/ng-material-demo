@@ -6,11 +6,12 @@
 }
 .container{
   margin-top: 10px;
-  box-shadow: 1px 1px 1px #999;
+  box-shadow: 1px 1px 1px #dedede;
 }
 .container:hover{
   cursor: pointer;
-  box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #999;
+  transition: all 0.2s ease-in 0s;
 }
 .complete-status{
   order: -1;
