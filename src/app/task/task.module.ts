@@ -8,6 +8,7 @@ import {TaskRoutingModule} from './task-routing.module';
 import {NewTaskComponent} from './new-task/new-task.component';
 import {CopyTaskComponent} from './copy-task/copy-task.component'
 import {ConfirmDialogComponent} from "../shared/confirm-dialog/confirm-dialog.component";
+import { NewTaskListComponent } from './new-task-list/new-task-list.component';
 
 
 @NgModule({
@@ -21,12 +22,14 @@ import {ConfirmDialogComponent} from "../shared/confirm-dialog/confirm-dialog.co
     TaskItemComponent,
     TaskHeaderComponent,
     NewTaskComponent,
-    CopyTaskComponent
+    CopyTaskComponent,
+    NewTaskListComponent
   ],
   entryComponents: [
     NewTaskComponent,
     CopyTaskComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    NewTaskListComponent
   ]
 })
 export class TaskModule {

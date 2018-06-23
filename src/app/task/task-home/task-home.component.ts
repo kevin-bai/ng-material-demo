@@ -3,6 +3,7 @@ import {MdDialog} from "@angular/material";
 import {NewTaskComponent} from '../new-task/new-task.component'
 import {CopyTaskComponent} from "../copy-task/copy-task.component";
 import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
+import {NewTaskListComponent} from "../new-task-list/new-task-list.component";
 
 @Component({
   selector: 'app-task-home',
@@ -80,7 +81,7 @@ export class TaskHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  openNewTakDialog() {
+  openNewTaskDialog() {
     this.dialog.open(NewTaskComponent, {data: {title: '新建任务'}})
   }
 
@@ -97,6 +98,25 @@ export class TaskHomeComponent implements OnInit {
       data: {
         title: '删除任务',
         content: '您确认删除任务吗？'
+      }
+    })
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  openRenameTasklistDialog() {
+    const dialogRef = this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: '修改任务列表名称'
+      }
+    })
+  }
+
+  openEditTasklistDialog() {
+    const dialogRef = this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: '新建任务列表'
       }
     })
     dialogRef.afterClosed().subscribe(res => {
