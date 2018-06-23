@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module'
 import {LoginModule} from './login'
 import {ProjectModule} from './project'
+import {TaskModule} from "./task/task.module";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ProjectModule} from './project'
     AppRoutingModule,
     LoginModule,
     ProjectModule,
+    TaskModule
   ],
   bootstrap: [AppComponent]
 })
