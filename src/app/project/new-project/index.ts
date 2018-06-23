@@ -8,6 +8,8 @@ import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material'
 })
 export class NewProjectComponent implements OnInit {
 
+  title: string;
+
   constructor(
     @Inject(MD_DIALOG_DATA) private data,
     private dialogRef: MdDialogRef<NewProjectComponent>,
@@ -15,6 +17,7 @@ export class NewProjectComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = this.data.title;
     console.log(JSON.stringify(this.data))
   }
 

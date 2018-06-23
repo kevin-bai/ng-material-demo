@@ -2,7 +2,9 @@
   class="card"
   *ngFor="let project of projects"
   [item]="project"
-  (inviteClick)="openInviteDialog()">
+  (inviteClick)="openInviteDialog()"
+  (editClick)="openEditDialog()"
+>
 </app-project-item>
 
 <button md-fab type="button" (click)="openNewProjectDialog()">

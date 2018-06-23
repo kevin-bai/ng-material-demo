@@ -22,7 +22,8 @@ export class NewTaskComponent implements OnInit {
       value: 3,
       label: '紧急'
     }
-  ]
+  ];
+  title: string;
 
   constructor(
     @Inject(MD_DIALOG_DATA) private data,
@@ -31,6 +32,8 @@ export class NewTaskComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = this.data.title;
+    console.log(JSON.stringify(this.data.task));
   }
 
 }

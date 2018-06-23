@@ -22,4 +22,8 @@ export class TaskItemComponent implements OnInit {
   changeComplete() {
     this.isComplete = !this.isComplete;
   }
+
+  onCheckboxClick(e: Event) {
+    e.stopPropagation();
+  }
 }

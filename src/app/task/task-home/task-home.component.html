@@ -2,10 +2,15 @@
   <app-task-list
     class="list-container"
     *ngFor="let list of lists">
-    <app-task-header [header]="list.name" (newTaskClick)="openNewTakDialog()"></app-task-header>
+    <app-task-header
+      [header]="list.name"
+      (newTaskClick)="openNewTakDialog()"
+      (copyTaskClick)="openCopyTaskDialog()"
+    ></app-task-header>
     <app-task-item
       *ngFor="let task of list.tasks"
       [item]="task"
+      (click)="openUpdateTaskDialog(task)"
     ></app-task-item>
   </app-task-list>
 </div>

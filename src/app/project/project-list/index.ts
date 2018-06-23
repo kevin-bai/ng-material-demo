@@ -33,7 +33,10 @@ export class ProjectListComponent implements OnInit {
     const dialogRef = this.dialog.open(NewProjectComponent, {
       width: '300px',
       height: '400px',
-      data: {isDark: false}
+      data: {
+        isDark: false,
+        title: '新建项目'
+      }
     });
 
     // 订阅接收子组件传递过来的消息
@@ -44,6 +47,14 @@ export class ProjectListComponent implements OnInit {
 
   openInviteDialog() {
     const dialogRef = this.dialog.open(InviteComponent)
+  }
+
+  openEditDialog() {
+    this.dialog.open(NewProjectComponent, {
+      data: {
+        title: '修改项目'
+      }
+    })
   }
 
 }

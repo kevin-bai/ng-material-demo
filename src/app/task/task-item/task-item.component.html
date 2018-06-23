@@ -3,9 +3,13 @@
               'normal': item.priority === 1,
               'important': item.priority === 2,
               'emergency': item.priority ===3}"
-              (click)="changeComplete()"
 >
-  <md-checkbox class="complete-status" [checked]="isComplete"></md-checkbox>
+  <md-checkbox
+    class="complete-status"
+    [checked]="isComplete"
+    (change)="changeComplete()"
+    (click)="onCheckboxClick($event)"
+  ></md-checkbox>
   <div md-line class="content" [ngClass]="{'completed': isComplete}">
     <span [md-tooltip]="item.desc">{{item.desc}}</span>
   </div>
