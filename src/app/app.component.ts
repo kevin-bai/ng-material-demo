@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {OverlayContainer} from "@angular/material";
 
 
 @Component({
@@ -9,10 +10,11 @@ import {Component} from '@angular/core';
 export class AppComponent {
   isDarkTheme = false;
 
-  constructor() {
+  constructor(private oc: OverlayContainer) {
   }
 
   themeChange() {
     this.isDarkTheme = !this.isDarkTheme;
+    this.oc.themeClass = this.isDarkTheme ? 'myapp-dark-theme' : '';
   }
 }
