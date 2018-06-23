@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from '../shared';
 import {MdIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import 'hammerjs'
 
 import {loadSvgResources} from '../utils/svg.util'
 import {HeaderComponent} from './header';
