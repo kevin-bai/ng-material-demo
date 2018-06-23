@@ -59,11 +59,15 @@ export class ProjectListComponent implements OnInit {
   }
 
   openConfirmDialog() {
-    this.dialog.open(ConfirmDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: '删除项目',
         content: '您确认删除该项目？'
       }
+    })
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res)
     })
   }
 
