@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {CoreModule} from './core';
 import {SharedModule} from './shared';
 import {MdSidenavModule} from '@angular/material'
@@ -15,6 +16,7 @@ import {TaskModule} from "./task/task.module";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     MdSidenavModule,
     CoreModule,
