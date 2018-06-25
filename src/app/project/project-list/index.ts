@@ -50,7 +50,11 @@ export class ProjectListComponent implements OnInit {
     // 订阅接收子组件传递过来的消息
     dialogRef.afterClosed().subscribe(res => {
       console.log(`i received : ${res}`);
-      this.projects = [...this.projects, {id: 3, name: '新增平台1', desc: '新增平台desc', img: 'assets/img/covers/2.jpg'}];
+      this.projects = [...this.projects,
+        {id: 3, name: '新增平台1', desc: '新增平台desc', img: 'assets/img/covers/2.jpg'},
+        {id: 4, name: '新增平台2', desc: '新增平台desc', img: 'assets/img/covers/3.jpg'},
+        {id: 5, name: '新增平台2', desc: '新增平台desc', img: 'assets/img/covers/3.jpg'}
+        ];
     })
 
   }

@@ -4,6 +4,8 @@
               'important': item.priority === 2,
               'emergency': item.priority ===3}"
               [@item] ='itemState'
+              [appDraggable]="true"
+              [draggedClass]="'drag-start'"
 >
   <md-checkbox
     class="complete-status"

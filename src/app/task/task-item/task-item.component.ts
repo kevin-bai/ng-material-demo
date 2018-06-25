@@ -30,7 +30,7 @@ export class TaskItemComponent implements OnInit {
   @HostListener('mouseleave', ['$event'])
   onMouseLeave(e) {
     // 传入一个时间对象
-    console.log(e);
+    // console.log(e);
     this.itemState = 'out';
   }
 
