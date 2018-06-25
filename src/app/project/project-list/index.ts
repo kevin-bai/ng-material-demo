@@ -4,12 +4,13 @@ import {NewProjectComponent} from '../new-project'
 import {InviteComponent} from '../invite';
 import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
 import {routerAnim} from '../../animation/router.anim'
+import {listAnimation} from '../../animation/list.anim'
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss'],
-  animations: [routerAnim]
+  animations: [routerAnim, listAnimation]
 })
 export class ProjectListComponent implements OnInit {
 
@@ -17,11 +18,13 @@ export class ProjectListComponent implements OnInit {
 
   projects = [
     {
+      id: 1,
       'name': '企业平台',
       'desc': '一个协作平台',
       'img': 'assets/img/covers/0.jpg'
     },
     {
+      id: 2,
       'name': '个人平台',
       'desc': '一个协作平台2',
       'img': 'assets/img/covers/1.jpg'
@@ -47,7 +50,9 @@ export class ProjectListComponent implements OnInit {
     // 订阅接收子组件传递过来的消息
     dialogRef.afterClosed().subscribe(res => {
       console.log(`i received : ${res}`);
+      this.projects = [...this.projects, {id: 3, name: '新增平台1', desc: '新增平台desc', img: 'assets/img/covers/2.jpg'}];
     })
+
   }
 
   openInviteDialog() {
@@ -62,7 +67,7 @@ export class ProjectListComponent implements OnInit {
     })
   }
 
-  openConfirmDialog() {
+  openConfirmDialog(proejct) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: '删除项目',
@@ -71,7 +76,8 @@ export class ProjectListComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log(res)
+      console.log(res);
+      this.projects = this.projects.filter(p => p.id !== proejct.id);
     })
   }
 
