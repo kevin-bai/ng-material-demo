@@ -1,9 +1,11 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener} from '@angular/core';
+import {cardAnim} from '../../animation/card.anim'
 
 @Component({
   selector: 'app-project-item',
   templateUrl: './project-item.component.html',
-  styleUrls: ['./project-item.component.scss']
+  styleUrls: ['./project-item.component.scss'],
+  animations: [cardAnim]
 })
 export class ProjectItemComponent implements OnInit {
 
@@ -11,6 +13,8 @@ export class ProjectItemComponent implements OnInit {
   @Output() inviteClick = new EventEmitter<void>();
   @Output() editClick = new EventEmitter<void>();
   @Output() deleteClick = new EventEmitter<void>();
+  // 绑定动画状态到组件host
+  @HostBinding('@card') cardState = 'out';
 
   constructor() {
   }
@@ -18,14 +22,25 @@ export class ProjectItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  @HostListener('mouseenter')
+  onMouseenter() {
+    this.cardState = 'in';
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    this.cardState = 'out';
+  }
+
   onInviteClick() {
     this.inviteClick.emit();
   }
 
-  onEditClick(){
+  onEditClick() {
     this.editClick.emit();
   }
-  onDeleteClick(){
+
+  onDeleteClick() {
     this.deleteClick.emit();
   }
 }

@@ -1,15 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, HostListener, HostBinding} from '@angular/core';
+import {itemAnim} from '../../animation/item.anim'
 
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.scss']
+  styleUrls: ['./task-item.component.scss'],
+  animations: [itemAnim]
 })
 export class TaskItemComponent implements OnInit {
 
   @Input() item;
   avatar;
   isComplete: boolean;
+  itemState = 'out';
 
   constructor() {
   }
@@ -17,6 +20,16 @@ export class TaskItemComponent implements OnInit {
   ngOnInit() {
     this.avatar = this.item.owner ? this.item.owner.avatar : 'unassigned';
     this.isComplete = this.item.completed;
+  }
+
+  @HostListener('mouseenter')
+  onMouseEnter() {
+    this.itemState = 'in';
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    this.itemState = 'out';
   }
 
   changeComplete() {
