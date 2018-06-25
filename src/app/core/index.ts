@@ -6,6 +6,7 @@ import {MdIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import 'hammerjs'
 
+import {AppRoutingModule} from '../app-routing.module'
 import {loadSvgResources} from '../utils/svg.util'
 import {HeaderComponent} from './header';
 import {FooterComponent} from './footer';
@@ -17,11 +18,13 @@ import {PageNotFoundComponent} from './page-not-found';
     SharedModule,
     HttpModule,
     BrowserAnimationsModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    AppRoutingModule
   ],
   declarations: [
     HeaderComponent,

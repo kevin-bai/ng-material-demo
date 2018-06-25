@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, HostListener, HostBinding} from '@angular/core';
+import {Component, Input, OnInit, HostListener} from '@angular/core';
 import {itemAnim} from '../../animation/item.anim'
 
 @Component({
@@ -27,8 +27,10 @@ export class TaskItemComponent implements OnInit {
     this.itemState = 'in';
   }
 
-  @HostListener('mouseleave')
-  onMouseLeave() {
+  @HostListener('mouseleave', ['$event'])
+  onMouseLeave(e) {
+    // 传入一个时间对象
+    console.log(e);
     this.itemState = 'out';
   }
 

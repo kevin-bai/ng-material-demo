@@ -5,14 +5,13 @@ import {CoreModule} from './core';
 import {SharedModule} from './shared';
 import {MdSidenavModule} from '@angular/material'
 import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app-routing.module'
 import {LoginModule} from './login'
 import {ProjectModule} from './project'
 import {TaskModule} from "./task/task.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +19,6 @@ import {TaskModule} from "./task/task.module";
     SharedModule,
     MdSidenavModule,
     CoreModule,
-    AppRoutingModule,
     LoginModule,
     ProjectModule,
     TaskModule

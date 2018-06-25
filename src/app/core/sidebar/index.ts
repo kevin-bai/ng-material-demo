@@ -9,6 +9,7 @@ import {getDate} from 'date-fns';
 })
 export class SidebarComponent implements OnInit {
 
+  @Output() navClick = new EventEmitter<void>();
   today = 'day';
 
   constructor() {
@@ -16,6 +17,10 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.today = `day${getDate(new Date())}`
+  }
+
+  onItemClick() {
+    this.navClick.emit();
   }
 
 }
