@@ -10,6 +10,7 @@
     [dragData]="list"
     [draggedClass]="'drag-start'"
     (droped)="handleMove($event, list)"
+    [ngStyle]="{'order': list.order}"
   >
     <app-task-header
       [header]="list.name"

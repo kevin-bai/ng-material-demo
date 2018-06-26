@@ -20,7 +20,7 @@ export class DragDirective {
 
   @Input() draggedClass: string;
   @Input() dragTag: string;
-  @Input() dragData: any
+  @Input() dragData: any;
 
   constructor(private el: ElementRef, private rd: Renderer2, private service: DragDropService) {
   }
