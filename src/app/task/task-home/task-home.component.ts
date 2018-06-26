@@ -10,7 +10,7 @@ import {routerAnim} from '../../animation/router.anim'
   selector: 'app-task-home',
   templateUrl: './task-home.component.html',
   styleUrls: ['./task-home.component.scss'],
-  animations:[routerAnim]
+  animations: [routerAnim]
 })
 export class TaskHomeComponent implements OnInit {
 
@@ -126,5 +126,19 @@ export class TaskHomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       console.log(res)
     })
+  }
+
+  handleMove(srcData, list) {
+    console.log('1111')
+    switch (srcData.tag) {
+      case 'task-item':
+        console.log(`handleMove : task-item:${list}`)
+        break;
+      case  'task-list':
+        console.log(`handleMove : task-list:${list}`)
+        break;
+      default:
+        break;
+    }
   }
 }

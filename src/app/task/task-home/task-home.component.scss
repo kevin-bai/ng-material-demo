@@ -31,3 +31,7 @@ button{
 .drag-enter{
   background: #666;
 }
+.drag-start{
+  opacity: 0.5;
+  outline: 2px dashed #ff4f3e;
+}
