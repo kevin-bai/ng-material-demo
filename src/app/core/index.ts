@@ -5,6 +5,7 @@ import {SharedModule} from '../shared';
 import {MdIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import 'hammerjs'
+import 'rxjs/add/operator/take'
 
 import {AppRoutingModule} from '../app-routing.module'
 import {loadSvgResources} from '../utils/svg.util'
