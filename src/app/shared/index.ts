@@ -89,7 +89,11 @@ import {
     MdSelectionModule,
     MdSlideToggleModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ImageListSelectComponent
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ],
   declarations: [
     ConfirmDialogComponent,

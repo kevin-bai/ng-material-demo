@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { routerAnim } from '../../animation/router.anim'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -9,10 +10,11 @@ import { routerAnim } from '../../animation/router.anim'
 })
 export class RegisterComponent implements OnInit {
 
+  form: FormGroup
   items: string[];
   @HostBinding('@slideToRight') routeState;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -21,6 +23,15 @@ export class RegisterComponent implements OnInit {
     this.items = nums.map(i => {
       return `avatars:svg-${i}`
     })
+    this.form = this.fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password1: ['', Validators.required],
+      password2: ['', Validators.required],
+      avatar: ['', Validators.required],
+    });
   }
 
+  onSubmit({ value, valid }, e) {
+
+  }
 }

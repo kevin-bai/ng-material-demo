@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { routerAnim } from '../../animation/router.anim'
-import { FormsModule, FormControl, Validators, FormGroup, RequiredValidator, FormBuilder } from '@angular/forms'
+import { FormsModule, FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
