@@ -14,11 +14,7 @@
       <md-input-container floatPlaceholder="float"  class="full-width">
         <input mdInput type="password" placeholder="重新输入您的密码" >
       </md-input-container>
-      <md-grid-list cols="6" rowHeight="1:1">
-        <md-grid-tile *ngFor="let item of items">
-          <md-icon class="avatar" svgIcon="{{item}}"></md-icon>
-        </md-grid-tile>
-      </md-grid-list>
+        <app-image-list-select></app-image-list-select>
       <button md-raised-button color="accent" type="button">注册</button>
     </md-card-content>
     <md-card-actions class="text-right">

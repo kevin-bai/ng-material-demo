@@ -9,7 +9,6 @@ import {MD_DIALOG_DATA, MdDialogRef} from "@angular/material";
       <md-dialog-content>
         {{content}}
       </md-dialog-content>
-
       <md-dialog-actions>
         <button md-raised-button type="button" color="primary" (click)="onClickHandler(true)">确定</button>
         <button md-button md-dialog-close type="button" (click)="onClickHandler(false)">关闭</button>

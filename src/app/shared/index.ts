@@ -1,8 +1,9 @@
-import {NgModule} from '@angular/core';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import {DirectiveModule} from '../directive/directive.module'
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component'
+import { DirectiveModule } from '../directive/directive.module'
 import {
   MdToolbarModule,
   MdSidenavModule,
@@ -91,7 +92,8 @@ import {
     FormsModule
   ],
   declarations: [
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ImageListSelectComponent
   ],
 
 })
