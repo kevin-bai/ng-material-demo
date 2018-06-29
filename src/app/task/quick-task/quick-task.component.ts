@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit, EventEmitter, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-quick-task',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuickTaskComponent implements OnInit {
 
-  constructor() { }
+  desc: string;
+  @Output() quickTask = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+
+  @HostListener('keyup.enter')
+  sendQuickTask() {
+
+    if (!this.desc || this.desc.length === 0 || !this.desc.trim()) {
+      return;
+    }
+    this.quickTask.emit(this.desc);
+    this.desc = '';
   }
 
 }

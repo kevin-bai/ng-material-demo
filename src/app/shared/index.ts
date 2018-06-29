@@ -58,6 +58,8 @@ import {
     MdTooltipModule,
     MdSelectionModule,
     MdSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
@@ -85,6 +87,8 @@ import {
     MdTooltipModule,
     MdSelectionModule,
     MdSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     ConfirmDialogComponent
