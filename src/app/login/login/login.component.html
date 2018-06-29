@@ -1,5 +1,4 @@
-
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
   <md-card>
     <md-card-header>
       <md-card-title>登录：</md-card-title>
@@ -7,15 +6,15 @@
     <md-card-content>
       <md-input-container floatPlaceholder="float" hintLabel="必填项" class="full-width">
         <!--<button mdPrefix>&copy;</button>-->
-        <input mdInput type="text" placeholder="您的email" >
+        <input mdInput type="text" name="email" placeholder="您的email" formControlName="email">
         <!--<span mdSuffix>@qq.com</span>-->
         <!--<md-hint>hint</md-hint>-->
-        <!--<md-error>error</md-error>-->
+        <md-error>{{form.controls['email'].errors | json}}</md-error>
       </md-input-container>
-      <md-input-container floatPlaceholder="float"  class="full-width">
-        <input mdInput type="password" placeholder="您的密码" >
+      <md-input-container floatPlaceholder="float" class="full-width">
+        <input mdInput type="password"  placeholder="您的密码" formControlName="password">
       </md-input-container>
-      <button md-raised-button color="accent" type="button">登录</button>
+      <button md-raised-button color="accent" type="submit" [disabled]="!form.valid">登录</button>
     </md-card-content>
     <md-card-actions class="text-right">
       <p>还没有账号？ <a href="" routerLink="/register">注册</a></p>
@@ -31,6 +30,5 @@
     <md-card-content>
       this is a english this is a englishthis is a englishthis is a englishthis is a english!
     </md-card-content>
-
   </md-card>
 </form>

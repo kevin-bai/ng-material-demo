@@ -1,13 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { routerAnim } from '../../animation/router.anim'
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  animations: [routerAnim]
 })
 export class RegisterComponent implements OnInit {
 
   items: string[];
+  @HostBinding('@slideToRight') routeState;
 
   constructor() {
   }
