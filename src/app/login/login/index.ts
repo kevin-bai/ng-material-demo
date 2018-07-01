@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder, private quoteService$: QuoteService) {
-    this.quoteService$.getQuote().subscribe(res => this.quote = res)
+    this.quoteService$.getQuote()
+    .subscribe(res => this.quote = res)
   }
 
   ngOnInit() {
