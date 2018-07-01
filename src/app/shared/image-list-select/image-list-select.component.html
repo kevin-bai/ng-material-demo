@@ -1,4 +1,4 @@
-<div>
+<div class="title-container">
   <span>{{title}}</span>
   <md-icon class="avatar" [svgIcon]="selected" *ngIf="useUserIcon else imageSelect" ></md-icon>
   <ng-template #imageSelect>
@@ -8,7 +8,7 @@
 <div class="scroll-container">
   <md-grid-list [cols]="cols" [rowHeight]="rowHeight">
     <md-grid-tile *ngFor="let item of items;let i = index ">
-      <div class="image-conainer">
+      <div class="image-container">
         <md-icon class="avatar" svgIcon="{{item}}" *ngIf="useUserIcon else imageItem" ></md-icon>
         <ng-template #imageItem>
           <img [src]="item" alt="" ngStyle="{'width': itemWidth"}>
