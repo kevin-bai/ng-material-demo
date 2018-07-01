@@ -1,3 +1,5 @@
+import { QuoteService } from './../../service/quote.service';
+import { Quote } from './../../domain/quote.model';
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { routerAnim } from '../../animation/router.anim'
 import { FormsModule, FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
@@ -10,11 +12,19 @@ import { FormsModule, FormControl, Validators, FormGroup, FormBuilder } from '@a
 })
 export class LoginComponent implements OnInit {
 
+  quote: Quote = {
+    "id": "0",
+    "cn": "我突然就觉得自己像个华丽的木偶,演尽了所有的悲欢离合,可是背上总是有无数闪亮的银色丝线,操纵我哪怕一举手一投足。",
+    // tslint:disable-next-line:max-line-length
+    "en": "I suddenly feel myself like a doll,acting all kinds of joys and sorrows.There are lots of shining silvery thread on my back,controlling all my action.",
+    "pic": "/assets/img/quotes/0.jpg"
+  };
   form: FormGroup;
   @HostBinding('@slideToRight') routeState;
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private quoteService$: QuoteService) {
+    this.quoteService$.getQuote().subscribe(res => this.quote = res)
   }
 
   ngOnInit() {

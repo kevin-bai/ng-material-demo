@@ -1,18 +1,19 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
-import {HttpModule} from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {SharedModule} from '../shared';
-import {MdIconRegistry} from '@angular/material';
-import {DomSanitizer} from '@angular/platform-browser';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../shared';
+import { MdIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import 'hammerjs'
 import 'rxjs/add/operator/take'
+import 'rxjs/add/operator/map';
 
-import {AppRoutingModule} from '../app-routing.module'
-import {loadSvgResources} from '../utils/svg.util'
-import {HeaderComponent} from './header';
-import {FooterComponent} from './footer';
-import {SidebarComponent} from './sidebar';
-import {PageNotFoundComponent} from './page-not-found';
+import { AppRoutingModule } from '../app-routing.module'
+import { loadSvgResources } from '../utils/svg.util'
+import { HeaderComponent } from './header';
+import { FooterComponent } from './footer';
+import { SidebarComponent } from './sidebar';
+import { PageNotFoundComponent } from './page-not-found';
 
 @NgModule({
   imports: [
@@ -32,6 +33,14 @@ import {PageNotFoundComponent} from './page-not-found';
     FooterComponent,
     SidebarComponent,
     PageNotFoundComponent,
+  ],
+  providers: [
+    {
+      provide: 'BASE_CONFIG',
+      useValue: {
+        uri: 'http://localhost:3000'
+      }
+    }
   ]
 })
 export class CoreModule {

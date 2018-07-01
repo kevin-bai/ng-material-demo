@@ -24,11 +24,11 @@
   <md-card>
     <md-card-header>
       <md-card-title>每日佳句</md-card-title>
-      <md-card-subtitle>每一日你所付出的代价都比前一日高,因为你的生命又消短了</md-card-subtitle>
+      <md-card-subtitle>{{quote.cn}}</md-card-subtitle>
     </md-card-header>
-    <img md-card-image src="/assets/img/quote_fallback.jpg" alt="" class="img">
+    <img md-card-image [src]="quote.pic" alt="" class="img">
     <md-card-content>
-      this is a english this is a englishthis is a englishthis is a englishthis is a english!
+      {{quote.en}}
     </md-card-content>
   </md-card>
 </form>

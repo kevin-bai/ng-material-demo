@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {LoginModule} from './login'
 import {ProjectModule} from './project'
 import {TaskModule} from "./task/task.module";
+import { ServiceModule } from './service/service.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {TaskModule} from "./task/task.module";
     CoreModule,
     LoginModule,
     ProjectModule,
-    TaskModule
+    TaskModule,
+    ServiceModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
