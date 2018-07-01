@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { routerAnim } from '../../animation/router.anim'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { QuoteService } from '../../service/quote.service';
+
 
 @Component({
   selector: 'app-register',
@@ -15,8 +15,7 @@ export class RegisterComponent implements OnInit {
   items: string[];
   @HostBinding('@slideToRight') routeState;
 
-  constructor(private fb: FormBuilder, private quoteService$: QuoteService) {
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
