@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import 'hammerjs'
 import 'rxjs/add/operator/take'
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 import '../utils/debug.util'
 
 import { AppRoutingModule } from '../app-routing.module'
